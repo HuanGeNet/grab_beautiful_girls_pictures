@@ -28,7 +28,7 @@ def pages_url(image_type,position):
     该函数用于获取某一个图片类型的全部页面的链接
     :param image_type:美女图片的类型，只有6种，是一个列表
     '''
-    url = 'http://www.mm131.com/' + image_type
+    url = 'http://www.mm131.net/' + image_type
     # 调用函数，创建soup对象
     soup = creat_soup(url)
     # 查找当前图片类型的分页链接
@@ -92,7 +92,7 @@ def save_images(atlas_url):
             os.makedirs(folder) # 创建文件夹
         # 当前图集 共多少张图片,span的内容结构是共XX页，XX为当前图片的张数
         images_number = int(soup.find('span',class_ = 'page-ch').string[1:-1])
-        # 当前图集的编号，如图集链接 http://www.mm131.com/qingchun/3039.html，编号为3039，用于拼接当前图集的图片地址
+        # 当前图集的编号，如图集链接 http://www.mm131.net/qingchun/3039.html，编号为3039，用于拼接当前图集的图片地址
         pic_number = url.replace('.','/').split('/')[-2]
         # 创建列表，用于保存每一张图片的链接
         images_url = []
@@ -127,6 +127,7 @@ atlas_url = atlas(pages_url)
 
 # 下载图集的图片
 save_images(atlas_url)
+
 
 
 
