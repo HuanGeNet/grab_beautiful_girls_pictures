@@ -97,9 +97,9 @@ def save_images(atlas_url):
         # 创建列表，用于保存每一张图片的链接
         images_url = []
         for number in range(1,images_number+1):
-            images_url.append('http://img1.mm131.me/pic/' + pic_number + '/'+ str(number) +'.jpg')
+            images_url.append('https://img1.mmmw.net/pic/' + pic_number + '/'+ str(number) +'.jpg')
         # 有些网站会有防盗链，原理是检查 HTTP的referer头，如果没有referer，会抓取不了数据
-        headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','referer':"http://www.mm131.com/xinggan/530.html"}
+        headers = {'User-Agent':'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36','referer':"http://www.mm131.net/xinggan/530.html"}
         # 开始下载提示，等待2秒后开始下载
         print("开始下载图集 {}，剩余图集 {}".format(file_folder,length - count))
         time.sleep(2)
@@ -127,9 +127,3 @@ atlas_url = atlas(pages_url)
 
 # 下载图集的图片
 save_images(atlas_url)
-
-
-
-
-
-
